@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Markdown 编辑器</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="toolbar">
+    <h1>Markdown 编辑器</h1>
+    <div class="actions">
+      <label class="sync-toggle" title="编辑区与预览区按行锚点同步滚动">
+        <input type="checkbox" id="sync-toggle" checked> 同步滚动
+      </label>
+      <button id="btn-export-html" type="button">导出 HTML</button>
+      <button id="btn-export-png" type="button">导出 PNG</button>
+    </div>
+  </header>
+
+  <main class="workspace">
+    <section class="pane">
+      <div class="pane-title">编辑</div>
+      <textarea id="editor" spellcheck="false" placeholder="在此输入 Markdown..."></textarea>
+    </section>
+    <section class="pane">
+      <div class="pane-title">预览</div>
+      <div id="preview" class="markdown-body"></div>
+    </section>
+  </main>
+
+  <footer class="statusbar"><span id="status">就绪</span></footer>
+  <div id="toasts" aria-live="polite"></div>
+
+  <script src="parser.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
